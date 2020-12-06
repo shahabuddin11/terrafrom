@@ -13,7 +13,9 @@ echo $PATH
 mv ~/Downloads/terraform /usr/local/bin/
 ```
 #verify the installation
-```terraform -help```
+```commandline
+terraform -help
+```
 #Terraform command to create infra into the AWS
 ```commandline
 terraform init -backend-config=config #intilizing the backend configuration
@@ -30,9 +32,9 @@ file name= terraform.tfstate
 
 # Again Run the terraform command to provision the infra
 ```commandline
-terraform Validate
+terraform Validate  # it validate your terraform script 
 terraform plan -out=final.plan
-terraform apply
+terraform apply #provision the infra
 
 ```
 
@@ -47,6 +49,10 @@ you that key.
 Some code i have commented into the ec2.tf you need to un-
 comment that code according to the need.
 
+#Clean Up 
+```commandline
+terraform destroy
+```
 #GithubLink
 
 
