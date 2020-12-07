@@ -25,6 +25,8 @@ terraform -help
 #Terraform command to create infra into the AWS
 ```commandline
 terraform init -backend-config=config #intilizing the backend configuration
+#if you don't want to intilize your backend you just run the command
+terraform init
 aws s3 ls s3://terrafromstate11  #list content from s3
 terraform workspace list  #list workspaces
 terraform workspace new $workspcename ( for example dev)
@@ -38,7 +40,7 @@ file name= terraform.tfstate
 
 # Again Run the terraform command to provision the infra
 ```commandline
-terraform validate  # it validate your terraform script 
+terraform validate  #It validate your terraform script 
 terraform plan -out=final.plan
 terraform apply #provision the infra
 
