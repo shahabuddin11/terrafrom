@@ -5,6 +5,12 @@ unzip awscliv2.zip
 sudo ./aws/install
 sudo ./aws/install -i /usr/local/aws-cli -b /usr/local/bin
 ```
+# Configure the AWS credentials
+```
+aws configure
+```
+Passes the Access key Secret set your profile
+
 #Install Terraform
 Download Package according to the OS this is for Linux based.
 ```commandline
@@ -43,7 +49,9 @@ So for ssh into the ec2 instance you need to copy the private key
 form the terraform.tfstate store this key into the 
 separate workspace and provide a proper permission to the
 key  then do ssh into the ec2 machine
-#OR
+
+# OR
+
 You can pass the existing key into the string but make sure
 you that key.
 Some code i have commented into the ec2.tf you need to un-
