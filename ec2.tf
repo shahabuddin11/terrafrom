@@ -8,11 +8,13 @@ resource "aws_key_pair" "generated_key" {
  key_name   = var.key_name
  public_key = tls_private_key.dev.public_key_openssh
 }
-
-resource "aws_instance" "web1" {
+# If you want to used existing key associated ith the instance
+#please comment the above code and pass key name into the
+#key name
+resource "aws_instance" "test" {
   ami = lookup(var.AMI, var.AWS_REGION)
   instance_type = "t2.micro"
-  key_name = aws_key_pair.generated_key.key_name
+  key_name = aws_key_pair.generated_key.key_name #keyname 
   # VPC
   subnet_id = aws_subnet.dev-subnet-public-1.id
   # Security Group
