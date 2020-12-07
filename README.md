@@ -26,19 +26,19 @@ terraform -help
 ```commandline
 terraform init -backend-config=config #intilizing the backend configuration
 aws s3 ls s3://terrafromstate11  #list content from s3
-teraform workspace list  #list workspaces
+terraform workspace list  #list workspaces
 terraform workspace new $workspcename ( for example dev)
 ```
 #Again Run s3 command it will create a folder into the s3 bucket
 ```cammandline
-aws s3 ls s3://terrafromstate11/env:/dev
+aws s3 ls s3://terrafromstate11/env:/dev/
 ```
 there is fill which contains the state of the terraform
 file name= terraform.tfstate
 
 # Again Run the terraform command to provision the infra
 ```commandline
-terraform Validate  # it validate your terraform script 
+terraform validate  # it validate your terraform script 
 terraform plan -out=final.plan
 terraform apply #provision the infra
 
@@ -62,5 +62,13 @@ comment that code according to the need.
 terraform destroy
 ```
 #GithubLink
+
+# Notes
+I have configure this in such way the .tfstate is stored into the s3 bucket. for that i am using config file to initlize the backend.
+
+# Resources
+
+1 VPC, 1 Public Subnet, Internet gateway, Security Group, Route table, 1 EC2 instance , ssh-key this resource will be created when you run this template.
+
 
 
