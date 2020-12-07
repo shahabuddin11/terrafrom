@@ -74,3 +74,5 @@ I have configure this in such way the .tfstate is stored into the s3 bucket. for
 
 
 
+# Module
+So there one folder name vpc  which is seprate module to create vpc into the aws.
