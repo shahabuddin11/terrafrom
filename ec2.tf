@@ -6,7 +6,7 @@ resource "tls_private_key" "dev" {
 }
 resource "aws_key_pair" "generated_key" {
  key_name   = var.key_name
- public_key = tls_private_key.dev
+ public_key = tls_private_key.dev.public_key_openssh
   }
 # If you want to used existing key associated with  the instance
 #please comment the above code and pass key name into the
