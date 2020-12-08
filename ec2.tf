@@ -13,7 +13,7 @@
 #key name
 resource "aws_instance" "test" {
   ami = lookup(var.AMI, var.AWS_REGION)
-  instance_type = "t2.micro"
+  instance_type = "t3a.micro"
   key_name = "test" #keyname 
   # VPC
   subnet_id = aws_subnet.dev-subnet-public-1.id
