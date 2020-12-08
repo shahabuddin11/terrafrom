@@ -19,7 +19,7 @@ map_public_ip_on_launch = "true" //it makes this a public subnet
 availability_zone = "us-east-2a"
   tags = merge(
   {
-    "Name"        = format("%s-vpc-%s", var.name, var.environment)
+    "Name"        = format("%s-subnet-%s", var.name, var.environment)
     "Environment" = format("%s", var.environment)
   },
   var.additional_tags
