@@ -2,7 +2,7 @@ resource "aws_internet_gateway" "dev-igw" {
   vpc_id = aws_vpc.dev-vpc.id
   tags = merge(
   {
-    "Name"        = format("%s-vpc-%s", var.name, var.environment)
+    "Name"        = format("%s-gateway-%s", var.name, var.environment)
     "Environment" = format("%s", var.environment)
   },
   var.additional_tags
@@ -20,7 +20,7 @@ resource "aws_route_table" "dev-public-crt" {
 
   tags = merge(
   {
-    "Name"        = format("%s-vpc-%s", var.name, var.environment)
+    "Name"        = format("%s-route-%s", var.name, var.environment)
     "Environment" = format("%s", var.environment)
   },
   var.additional_tags
@@ -48,7 +48,7 @@ resource "aws_security_group" "ssh-allowed" {
     // Put your office or home address in it!
     cidr_blocks = ["0.0.0.0/0"]
   }
-  //If you do not add this rule, you can not reach the NGIX
+  
   ingress {
     from_port = 80
     to_port = 80
@@ -57,7 +57,7 @@ resource "aws_security_group" "ssh-allowed" {
   }
   tags = merge(
   {
-    "Name"        = format("%s-vpc-%s", var.name, var.environment)
+    "Name"        = format("%s-security-%s", var.name, var.environment)
     "Environment" = format("%s", var.environment)
   },
   var.additional_tags
