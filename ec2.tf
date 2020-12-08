@@ -22,7 +22,7 @@ resource "aws_instance" "test" {
     aws_security_group.ssh-allowed.id]
   tags = merge(
   {
-    "Name"        = format("%s-vpc-%s", var.name, var.environment)
+    "Name"        = format("%s-Instance-%s", var.name, var.environment)
     "Environment" = format("%s", var.environment)
   },
   var.additional_tags
